@@ -12,9 +12,14 @@ provider "aws" {
   region  = "us-east-1"
   profile = "default"
 }
+
+variable "bucketToCreate" {
+  type = string
+}
+
 module "s3" {
   source         = "./modules/s3"
-  bucketToCreate = "bucket-via-jenkins"
+  bucketToCreate = var.bucketToCreate
 }
 
 output "s3BucketName" {
