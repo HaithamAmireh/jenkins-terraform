@@ -7,15 +7,14 @@ terraform {
     }
   }
 }
-variable "bucketToCreate" {
-  type    = string
-  default = ""
 
+provider "aws" {
+  region  = "us-east-1"
+  profile = "default"
 }
-
 module "s3" {
   source         = "./modules/s3"
-  bucketToCreate = var.bucketToCreate
+  bucketToCreate = "bucket-via-jenkins"
 }
 
 output "s3BucketName" {
