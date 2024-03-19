@@ -11,9 +11,9 @@ def trigger_jenkins_job(bucket_name):
     jenkins_url = (
         "http://localhost:8080"  # Assuming Jenkins is running locally on port 8080
     )
-    job_name = "terraform-s3"
-    user_name = "haitham-jenkins"
-    api_token = "1116a1c7b19dd01365998e7f13815227d5"
+    job_name = ""
+    user_name = ""
+    api_token = ""
 
     url = f"{jenkins_url}/job/{job_name}/buildWithParameters"
     params = {"token": api_token, "bucket_name": bucket_name}
